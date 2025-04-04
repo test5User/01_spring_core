@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="car1" class="by.itclass._02_car.SimpleCar"/>
+
+    <bean name="car2" class="by.itclass._02_car.SimpleCar">
+        <constructor-arg value="Mercedes CLK"/>
+    </bean>
+
+    <bean name="car3" class="by.itclass._02_car.SimpleCar">
+        <property name="id" value="1"/>
+    </bean>
+
+    <bean name="car4" class="by.itclass._02_car.SimpleCar">
+        <constructor-arg index="0" value="2"/>
+        <constructor-arg index="1" value="VW Juke"/>
+    </bean>
+
+    <bean name="car5" class="by.itclass._02_car.SimpleCar">
+        <constructor-arg name="id" value="3"/>
+        <constructor-arg name="model" value="Lada Vesta"/>
+    </bean>
+
+    <bean name="engine-diesel" class="by.itclass._02_car.Engine">
+        <constructor-arg value="Diesel"/>
+    </bean>
+
+    <bean name="car6" class="by.itclass._02_car.ComplexCar">
+        <constructor-arg name="id" value="4"/>
+        <constructor-arg name="model" value="Tesla"/>
+        <constructor-arg name="engine" ref="engine-diesel"/>
+    </bean>
+</beans>
